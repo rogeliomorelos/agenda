@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+
+  myapp-mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=agenda1234
+      - MYSQL_DATABASE=AgendaDB
+      #- MYSQL_USER=myapp-user
+      #- MYSQL_PASSWORD=agenda1111
+    ports:
+      - 3306:3306
+    networks:
+      - backend
+
+  myapp-main:
+    image: devops4fun/agenda
+    restart: on-failure
+    depends_on:
+      - myapp-mysql
+    ports:
+      - 8080:8080
+    environment:
+      - PROFILE=dev
+      - URL=jdbc:mysql://myapp-mysql:3306/AgendaDB
+      - USER=root
+      - PASSWORD=agenda1234
+    command: '/bin/sh -c "echo $$URL"'
+    networks:
+      - backend
+
+# Networks to be created to facilitate communication between containers
+networks:
+  backend:
