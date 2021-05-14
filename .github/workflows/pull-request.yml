@@ -43,3 +43,5 @@ jobs:
 
       - name: Execute mvn clean test
         run: mvn clean test -Dspring.datasource.password=${{ secrets.DB_PASSWORD }}
+
+
