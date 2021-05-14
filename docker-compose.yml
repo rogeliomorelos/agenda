@@ -33,3 +33,4 @@ services:
 # Networks to be created to facilitate communication between containers
 networks:
   backend:
+#curl -f http://localhost:8080/actuator/health

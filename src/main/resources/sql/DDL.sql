@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS friend;
 
 CREATE TABLE IF NOT EXISTS friend
 (
