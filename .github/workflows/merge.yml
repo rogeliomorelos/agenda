@@ -67,12 +67,12 @@ jobs:
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
-          docker build -t $ECR_REPOSITORY .
-          docker tag $ECR_REPOSITORY:latest 080400906742.dkr.ecr.us-east-1.amazonaws.com/$ECR_REPOSITORY:latest
-          docker tag $ECR_REPOSITORY:latest 080400906742.dkr.ecr.us-east-1.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
-          echo "::set-output name=image::080400906742.dkr.ecr.us-east-1.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG"
+          docker build -t ninjaworkshop3repository .
+          docker tag ninjaworkshop3repository:latest 080400906742.dkr.ecr.us-east-1.amazonaws.com/ninjaworkshop3repository:latest
+          docker tag ninjaworkshop3repository:latest 080400906742.dkr.ecr.us-east-1.amazonaws.com/ninjaworkshop3repository:$IMAGE_TAG
+          docker push $ECR_REGISTRY/ninjaworkshop3repository:$IMAGE_TAG
+          docker push $ECR_REGISTRY/ninjaworkshop3repository:latest
+          echo "::set-output name=image::080400906742.dkr.ecr.us-east-1.amazonaws.com/ninjaworkshop3repository:$IMAGE_TAG"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
