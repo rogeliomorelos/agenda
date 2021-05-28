@@ -1,6 +1,9 @@
 # Agenda - Workshop 2
 
 Spring Boot Agenda - Used for Workshop 2
+A basic Java API with Springboot, Docker and Docker Compose. 
+The next Workshop consists of use GitHub Actions to deploy this API to AWS
+Check the repo: [Workshop 3](https://github.com/rogeliomorelos/agenda-aws) 
 <br>
 
 # Tech stack
